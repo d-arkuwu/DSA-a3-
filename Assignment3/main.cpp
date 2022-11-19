@@ -7,4 +7,5 @@ int main()
 {
 	Library lib;
 	lib.run();
+	cout << "hi";
 }
