@@ -9,6 +9,10 @@ class BookRef
 	DList<Book>::Iterator nodeInList;
 
 public:
+	~BookRef()
+	{
+		nodeInList = NULL;
+	}
 	BookRef(int issn, DList<Book>::Iterator it)
 	{
 		ISSN = issn;

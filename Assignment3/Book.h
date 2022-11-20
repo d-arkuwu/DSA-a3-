@@ -12,6 +12,15 @@ class Book
 	int issueCount;
 
 public:
+	~Book()
+	{
+		delete[] title;
+		int i = 0;
+		while (authors[i] != NULL)
+		{
+			delete[] authors[i];
+		}
+	}
 	Book(int issn, char* t, char** authorList, int refB, int issuableB)
 	{
 		ISSN = issn;

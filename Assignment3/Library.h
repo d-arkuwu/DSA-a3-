@@ -10,6 +10,11 @@ class Library
 	DList<Book> allBooks;
 
 public:
+	~Library()
+	{
+		bookRefs.~AVL();
+		allBooks.~DList();
+	}
 	void addBook(int issn, char* title, char** authors, int refB, int issuableB)
 	{
 		Book* b = new Book{ issn, title, authors, refB, issuableB };
