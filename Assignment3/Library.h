@@ -10,11 +10,6 @@ class Library
 	DList<Book> allBooks;
 
 public:
-	~Library()
-	{
-		bookRefs.~AVL();
-		allBooks.~DList();
-	}
 	void addBook(int issn, char* title, char** authors, int refB, int issuableB)
 	{
 		Book* b = new Book{ issn, title, authors, refB, issuableB };
@@ -24,6 +19,7 @@ public:
 	} 
 	void printBooks()
 	{
+		system("cls");
 		allBooks.print();
 	}
 	
@@ -42,6 +38,7 @@ public:
 			cout << "2. Review a book record\n";
 			cout << "3. Update a book record\n";
 			cout << "4. Delete a book record\n";
+			cout << "5. List all book records\n";
 			cout << "\nChoose desired operation : "; cin >> c;
 			switch (c)
 			{
@@ -59,6 +56,10 @@ public:
 			{
 				updateBook();
 				break;
+			}
+			case 5:
+			{
+				printBooks();
 			}
 			default:
 				flag = false;

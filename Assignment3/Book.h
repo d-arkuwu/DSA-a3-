@@ -12,15 +12,6 @@ class Book
 	int issueCount;
 
 public:
-	~Book()
-	{
-		delete[] title;
-		int i = 0;
-		while (authors[i] != NULL)
-		{
-			delete[] authors[i];
-		}
-	}
 	Book(int issn, char* t, char** authorList, int refB, int issuableB)
 	{
 		ISSN = issn;
@@ -58,6 +49,7 @@ public:
 		}
 		cout << "\nNumber of copies available as reference books : " << b.refBookCount << endl<<endl;
 		cout << "Number of copies available as issuable books : " << b.issueCount << endl<<endl;
+		cout << "\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n";
 		return out;
 	}
 	friend bool operator== (const Book& b1, const Book& b2)

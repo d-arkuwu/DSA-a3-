@@ -28,18 +28,6 @@ class AVL
 
 	ANode* root;
 public:
-	~AVL()
-	{
-		Delete(root);
-	}
-	void Delete(ANode* t)
-	{
-		if (t == NULL)
-			return;
-		Delete(t->left);
-		Delete(t->right);
-		delete t;
-	}
 	AVL()
 	{
 		root = 0;

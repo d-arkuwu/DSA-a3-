@@ -13,16 +13,6 @@ private:
 	Node* tail;
 public:
 	class Iterator;
-	~DList()
-	{
-		while (head->prev != NULL && tail->next != NULL)
-		{
-			Node* temp = tail->prev;
-			temp->prev->next = tail;
-			tail->prev = temp->prev;
-			delete temp;
-		}
-	}
 	DList()
 	{
 		head = new Node;
