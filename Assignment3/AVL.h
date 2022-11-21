@@ -175,7 +175,6 @@ public:
 			else if (r->data.getISSN() < val)
 				return search(val, r->right);
 		}
-
 	}
 	auto search(int val)
 	{
@@ -192,7 +191,6 @@ public:
 			else if (r->data.getISSN() < val)
 				return searchBook(val, r->right);
 		}
-		
 	}
 	Book& searchBook(int issn)
 	{

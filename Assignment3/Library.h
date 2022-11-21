@@ -57,6 +57,11 @@ public:
 				updateBook();
 				break;
 			}
+			case 4:
+			{
+				deleteBook();
+				break;
+			}
 			case 5:
 			{
 				printBooks();
@@ -66,7 +71,20 @@ public:
 				break;
 			}
 		}
-
+	}
+	void deleteBook()
+	{
+		system("cls");
+		int c;
+		cout << "Enter the ISSN number of the book you wish to delete : "; cin >> c;
+		system("cls");
+		Delete(c);
+	}
+	void Delete(int issn)
+	{
+		DList<Book>::Iterator book = bookRefs.search(issn);
+		allBooks.erase(book);
+		//bookRefs.removeBook(issn);
 	}
 	void createBook()
 	{
@@ -89,7 +107,8 @@ public:
 		{
 			cout << "\nEnter name of author : ";
 			char* temp = new char[100];
-			cin.ignore();
+			if(i == 0)
+				cin.ignore();
 			cin.getline(temp, 100);
 			Helper::stringCopy(authors[i], temp);
 		}
